@@ -18,7 +18,6 @@ def test_f_2p_1im():
     assert res0[0][2] == "BORDER_FOUND_BY_SCAN_TOL"
     assert res0[1][2] == "SCAN_BOUND_REACHED"
 
-"""
 def test_f_2p_1im_max_iter_5():
     res0 = [get_right_endpoint_by_lin_extrapol(
         [3., 1.],
@@ -174,4 +173,3 @@ def test_f_3p_im():
     assert res0[1][0] == approx(math.log(3), abs=1e-2)
     assert res0[1][2] == "BORDER_FOUND_BY_SCAN_TOL"
     assert res0[2][2] == "SCAN_BOUND_REACHED"
-"""

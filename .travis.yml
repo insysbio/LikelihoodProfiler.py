@@ -16,11 +16,11 @@ script:
 after_success:
 - sphinx-build -b html ./source ./docs
 deploy:
-provider: gh-pages
-skip-cleanup: true
-keep-history: true
-on:
-  branch: master
-github-token: $GH_TOKEN
-local-dir: docs
-committer-from-gh: true
+  provider: pages
+  skip-cleanup: true
+  keep-history: true
+  on:
+    branch: master
+  github-token: $GH_TOKEN
+  local-dir: docs
+  committer-from-gh: true

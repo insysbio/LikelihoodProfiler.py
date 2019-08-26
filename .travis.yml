@@ -24,4 +24,3 @@ on:
 github-token: $GH_TOKEN
 local-dir: docs
 committer-from-gh: true
-"""

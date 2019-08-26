@@ -78,26 +78,26 @@ transformations for faster optimization.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>theta_init</strong> (<em>array</em><em>(</em><em>float</em><em>)</em>) – starting values of parameter vector</p></li>
-<li><p><strong>theta_num</strong> (<em>type</em>) – Description of parameter <cite>theta_num</cite>.</p></li>
-<li><p><strong>loss_func</strong> (<em>type</em>) – Description of parameter <cite>loss_func</cite>.</p></li>
-<li><p><strong>method</strong> (<em>type</em>) – Description of parameter <cite>method</cite>.</p></li>
-<li><p><strong>direction</strong> (<em>type</em>) – Description of parameter <cite>direction</cite>.</p></li>
-<li><p><strong>loss_crit</strong> (<em>type</em>) – Description of parameter <cite>loss_crit</cite>.</p></li>
-<li><p><strong>scale</strong> (<em>type</em>) – Description of parameter <cite>scale</cite>.</p></li>
-<li><p><strong>theta_bounds</strong> (<em>type</em>) – Description of parameter <cite>theta_bounds</cite>.</p></li>
-<li><p><strong>scan_bound</strong> (<em>type</em>) – Description of parameter <cite>scan_bound</cite>.</p></li>
-<li><p><strong>scan_tol</strong> (<em>type</em>) – Description of parameter <cite>scan_tol</cite>.</p></li>
-<li><p><strong>loss_tol</strong> (<em>type</em>) – Description of parameter <cite>loss_tol</cite>.</p></li>
-<li><p><strong>local_alg</strong> (<em>type</em>) – Description of parameter <cite>local_alg</cite>.</p></li>
-<li><p><strong>**kwargs</strong> (<em>type</em>) – Description of parameter <cite>**kwargs</cite>.</p></li>
+<li><p><strong>theta_init</strong> (<em>Array</em><em>[</em><em>Float64</em><em>]</em>) – starting values of parameter vector theta. The starting values is not necessary to be the optimum values for <cite>loss_func</cite> but it the value of <cite>loss_func</cite> must be lower than <cite>loss_crit</cite>.</p></li>
+<li><p><strong>theta_num</strong> (<em>Int</em>) – number n of vector component to compute confidence interval <a href="#id1"><span class="problematic" id="id2">`</span></a>theta^n.</p></li>
+<li><p><strong>loss_func</strong> (<em>Function</em>) – loss function <code class="docutils literal notranslate"><span class="pre">\Lambda\left(\theta\right)</span></code> the profile of which is analyzed. Usually we use log-likelihood for profile analysis in form <code class="docutils literal notranslate"><span class="pre">\Lambda(</span> <span class="pre">\theta</span> <span class="pre">)</span> <span class="pre">=</span> <span class="pre">-</span> <span class="pre">2</span> <span class="pre">ln\left(</span> <span class="pre">L(\theta)</span> <span class="pre">\right)</span></code>.</p></li>
+<li><p><strong>method</strong> (<em>String</em>) – computational method to evaluate interval endpoint. Currently the following methods are implemented: <cite>CICO_ONE_PASS</cite>, <cite>LIN_EXTRAPOL</cite>, <cite>QUADR_EXTRAPOL</cite>.</p></li>
+<li><p><strong>direction</strong> (<em>String</em>) – <cite>right</cite> or <cite>left</cite> endpoint to estimate.</p></li>
+<li><p><strong>loss_crit</strong> (<em>Float64</em>) – </p></li>
+<li><p><strong>scale</strong> (<em>String</em>) – </p></li>
+<li><p><strong>theta_bounds</strong> (<em>Flaot64</em>) – </p></li>
+<li><p><strong>scan_bound</strong> (<em>Float64</em>) – </p></li>
+<li><p><strong>scan_tol</strong> (<em>Float64</em>) – </p></li>
+<li><p><strong>loss_tol</strong> (<em>Float64</em>) – </p></li>
+<li><p><strong>local_alg</strong> (<em>String</em>) – </p></li>
+<li><p><strong>**kwargs</strong> (<em>type</em>) – other options for get_right_endpoint</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Description of returned object.</p>
+<dd class="field-even"><p>structure storing all input data and estimated confidence interval.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>type</p>
+<dd class="field-odd"><p>class ParamInterval</p>
 </dd>
 </dl>
 </dd></dl>

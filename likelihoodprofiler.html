@@ -72,7 +72,35 @@
 <dl class="function">
 <dt id="likelihoodprofiler.get_endpoint.get_endpoint">
 <code class="sig-prename descclassname">likelihoodprofiler.get_endpoint.</code><code class="sig-name descname">get_endpoint</code><span class="sig-paren">(</span><em class="sig-param">theta_init</em>, <em class="sig-param">theta_num</em>, <em class="sig-param">loss_func</em>, <em class="sig-param">method</em>, <em class="sig-param">direction='right'</em>, <em class="sig-param">loss_crit=0.0</em>, <em class="sig-param">scale=[]</em>, <em class="sig-param">theta_bounds=[]</em>, <em class="sig-param">scan_bound=None</em>, <em class="sig-param">scan_tol=0.001</em>, <em class="sig-param">loss_tol=0.001</em>, <em class="sig-param">local_alg=28</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.get_endpoint.get_endpoint" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Calculates right or left endpoint of CI for parameter component. It is a wripper
+of <cite>get_right_endpoint</cite> functions for selection of direction and using different
+transformations for faster optimization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>theta_init</strong> (<em>array</em><em>(</em><em>float</em><em>)</em>) – starting values of parameter vector</p></li>
+<li><p><strong>theta_num</strong> (<em>type</em>) – Description of parameter <cite>theta_num</cite>.</p></li>
+<li><p><strong>loss_func</strong> (<em>type</em>) – Description of parameter <cite>loss_func</cite>.</p></li>
+<li><p><strong>method</strong> (<em>type</em>) – Description of parameter <cite>method</cite>.</p></li>
+<li><p><strong>direction</strong> (<em>type</em>) – Description of parameter <cite>direction</cite>.</p></li>
+<li><p><strong>loss_crit</strong> (<em>type</em>) – Description of parameter <cite>loss_crit</cite>.</p></li>
+<li><p><strong>scale</strong> (<em>type</em>) – Description of parameter <cite>scale</cite>.</p></li>
+<li><p><strong>theta_bounds</strong> (<em>type</em>) – Description of parameter <cite>theta_bounds</cite>.</p></li>
+<li><p><strong>scan_bound</strong> (<em>type</em>) – Description of parameter <cite>scan_bound</cite>.</p></li>
+<li><p><strong>scan_tol</strong> (<em>type</em>) – Description of parameter <cite>scan_tol</cite>.</p></li>
+<li><p><strong>loss_tol</strong> (<em>type</em>) – Description of parameter <cite>loss_tol</cite>.</p></li>
+<li><p><strong>local_alg</strong> (<em>type</em>) – Description of parameter <cite>local_alg</cite>.</p></li>
+<li><p><strong>**kwargs</strong> (<em>type</em>) – Description of parameter <cite>**kwargs</cite>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Description of returned object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>type</p>
+</dd>
+</dl>
+</dd></dl>
 
 </div>
 <div class="section" id="module-likelihoodprofiler.get_interval">

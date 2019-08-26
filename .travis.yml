@@ -16,7 +16,7 @@ script:
 after_success:
 - sphinx-build -b html ./source ./docs
 deploy:
-provider: pages
+provider: gh-pages
 skip-cleanup: true
 keep-history: true
 on:

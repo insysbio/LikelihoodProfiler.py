@@ -1,16 +1,15 @@
 class ProfilePoint:
-    """
-    Structure storing one point from profile function.
+    """Structure storing one point from profile function.
+
+    Parameters
+    ----------
+    value : Float64
+    loss : Float64
+    params : Array[Float64]
+    ret : String
+    counter : Int or
     """
     def __init__(self, value, loss, params, ret, counter):
-        """
-
-        :param value:
-        :param loss:
-        :param params:
-        :param ret:
-        :param counter:
-        """
         self.value = value
         self.loss = loss
         self.params = params
@@ -19,18 +18,17 @@ class ProfilePoint:
 
 
 class EndPoint:
-    """
-    Structure storing end point for confidence interval.
+    """Structure storing end point for confidence interval.
+
+    Parameters
+    ----------
+    value : Float64 or None
+    profilePoints : Array[ProfilePoint]
+    status : String
+    direction : String
+    counter : Int
     """
     def __init__(self, value, profilePoints, status, direction, counter):
-        """
-
-        :param value:
-        :param profilePoints:
-        :param status:
-        :param direction:
-        :param counter:
-        """
         self.value = value
         self.profilePoints = profilePoints
         self.status = status

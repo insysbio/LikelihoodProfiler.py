@@ -1,23 +1,8 @@
 likelihoodprofiler package
 ==========================
 
-Subpackages
------------
-
-.. toctree::
-
-   likelihoodprofiler.tests
-
 Submodules
 ----------
-
-likelihoodprofiler.cico\_one\_pass module
------------------------------------------
-
-.. automodule:: likelihoodprofiler.cico_one_pass
-   :members:
-   :undoc-members:
-   :show-inheritance:
 
 likelihoodprofiler.get\_endpoint module
 ---------------------------------------
@@ -43,22 +28,6 @@ likelihoodprofiler.get\_right\_endpoint module
    :undoc-members:
    :show-inheritance:
 
-likelihoodprofiler.get\_right\_endpoint\_by\_lin\_extrapol module
------------------------------------------------------------------
-
-.. automodule:: likelihoodprofiler.get_right_endpoint_by_lin_extrapol
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-likelihoodprofiler.method\_quadr\_extrapol module
--------------------------------------------------
-
-.. automodule:: likelihoodprofiler.method_quadr_extrapol
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 likelihoodprofiler.profile module
 ---------------------------------
 
@@ -74,15 +43,6 @@ likelihoodprofiler.structures module
    :members:
    :undoc-members:
    :show-inheritance:
-
-likelihoodprofiler.support\_math\_func module
----------------------------------------------
-
-.. automodule:: likelihoodprofiler.support_math_func
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 
 Module contents
 ---------------

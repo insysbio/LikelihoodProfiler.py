@@ -14,6 +14,34 @@ def profile(
     ftol_abs=1e-3,
      **kwargs
 ):
+    """Short summary.
+
+    It generates the profile function based on :code:`loss_func`. Used internally in methods :code:`"LIN_EXTRAPOL"`, :code:`"QUADR_EXTRAPOL"`.
+    ----------
+    theta_init : Array[Float64]
+        starting values of parameter vector :math:`\\Theta`. The starting values is not necessary to be the optimum values for :code:`loss_func` but it the value of :code:`loss_func` must be lower than :code:`loss_crit`.
+    theta_num : Int
+        number :math:`n` of vector component to compute confidence interval :math:`\\Theta^n`.
+    loss_func : Function
+        loss function :math:`\\Lambda\\left(\\Theta\\right)` the profile of which is analyzed. Usually we use log-likelihood for profile analysis in form :math:`\\Lambda( \\theta ) = - 2 ln\\left( L(\\Theta) \\right)`.
+    skip_optim : Bool
+        set :code:`True` if you need marginal profile, i.e. profile without optimization. Default is :code:`False`.
+    theta_bounds :Array[Array[Float64,Float64]]
+        vector of bounds for each component in format :math:`(left_border, right_border)`. This bounds define the ranges for possible parameter values. The defaults are the non-limited values taking into account the :code:`scale`, i.e. :math:`(0, Inf)` for :code:`"log"` scale.
+    local_alg : Function
+        algorithm of optimization. Currently the local derivation free algorithms form NLOPT pack were tested. The methods: :code:`nlopt.LN_NELDERMEAD, nlopt.LN_COBYLA, nlopt.LN_PRAXIS` show good results. Methods: :code:`nlopt.LN_BOBYQA, nlopt.LN_SBPLX, nlopt.LN_NEWUOA` is not recommended.
+    ftol_abs : Float64
+         absolute tolerance criterion for profile function.
+    **kwargs : Any
+        the additional keyword arguments passed to :code:`get_right_endpoint` for specific :code:`method`.
+
+    Returns
+    -------
+    Function
+        Returns profile function for selected parameter component. Each call of the function
+        starts optimization.
+
+    """
 
     if theta_bounds is None:
         theta_bounds = np.tile([(-1)*np.inf, np.inf], (len(theta_init), 1))

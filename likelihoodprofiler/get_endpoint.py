@@ -27,36 +27,36 @@ def get_endpoint(
     Parameters
     ----------
     theta_init : Array[Float64]
-        starting values of parameter vector theta. The starting values is not necessary to be the optimum values for `loss_func` but it the value of `loss_func` must be lower than `loss_crit`.
+        starting values of parameter vector :math:`\\Theta`. The starting values is not necessary to be the optimum values for :code:`loss_func` but it the value of :code:`loss_func` must be lower than :code:`loss_crit`.
     theta_num : Int
-        number n of vector component to compute confidence interval `theta^n.
+        number :math:`n` of vector component to compute confidence interval :math:`\\Theta^n`.
     loss_func : Function
-        loss function the profile of which is analyzed. Usually we use log-likelihood for profile analysis in form ``\\Lambda( \\theta ) = - 2 ln\\left( L(\\theta) \\right)``.
+        loss function :math:`\\Lambda\\left(\\Theta\\right)` the profile of which is analyzed. Usually we use log-likelihood for profile analysis in form :math:`\\Lambda( \\theta ) = - 2 ln\\left( L(\\Theta) \\right)`.
     method : String
-        computational method to evaluate interval endpoint. Currently the following methods are implemented: `CICO_ONE_PASS`, `LIN_EXTRAPOL`, `QUADR_EXTRAPOL`.
+        computational method to evaluate interval endpoint. Currently the following methods are implemented: :code:`"CICO_ONE_PASS"`, :code:`"LIN_EXTRAPOL"`, :code:`"QUADR_EXTRAPOL"`.
     direction : String
-        `right` or `left` endpoint to estimate.
+        :code:`"right"` or :code:`"left"` endpoint to estimate.
     loss_crit : Float64
-
+        critical level of loss function. The endpoint of CI for selected parameter is the value at which profile likelihood meets the value of :code:`loss_crit`.
     scale : String
-
-    theta_bounds : Flaot64
-
-    scan_bound : Float64
-
+        vector of scale transformations for each component. Possible values: :code:`"direct", "log", "logit"`. This option can make optimization much more faster, especially for wide :code:`theta_bounds`. The default value is :code:`"direct"` (no transformation) for all components.
+    theta_bounds :Array[Array[Float64,Float64]]
+        vector of bounds for each component in format :math:`(left_border, right_border)`. This bounds define the ranges for possible parameter values. The defaults are the non-limited values taking into account the :code:`scale`, i.e. :math:`(0, Inf)` for :code:`"log"` scale.
+    scan_bounds : Array[Float64,Float64]
+         vector of scan bound for :code:`theta_num` component. It must be within the :code:`theta_bounds` for the scanned component. The defaults are `(-9., 9.) for transformed values, i.e. :math:`(1e-9, 1e9)` for :code:`"log"` scale.
     scan_tol : Float64
-
+        Absolute tolerance of scanned component (stop criterion).
     loss_tol : Float64
-
-    local_alg : String
-
-    **kwargs : type
-         other options for get_right_endpoint
+        Absolute tolerance of :code:`loss_func` at :code:`loss_crit` (stop criterion). *Restriction*. Currently is not effective for :code:`nlopt.CICO_ONE_PASS` methods because of limitation in :code:`nlopt.LN_AUGLAG` interface.
+    local_alg : Function
+        algorithm of optimization. Currently the local derivation free algorithms form NLOPT pack were tested. The methods: :code:`nlopt.LN_NELDERMEAD, nlopt.LN_COBYLA, nlopt.LN_PRAXIS` show good results. Methods: :code:`nlopt.LN_BOBYQA, nlopt.LN_SBPLX, nlopt.LN_NEWUOA` is not recommended.
+    **kwargs : Any
+        the additional keyword arguments passed to :code:`get_right_endpoint` for specific :code:`method`.
 
     Returns
     -------
-    class ParamInterval
-         structure storing all input data and estimated confidence interval.
+    class EndPoint
+         object storing confidence endpoint and profile points found on fly.
 
     """
     if len(scale) == 0:

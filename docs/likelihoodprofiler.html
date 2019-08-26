@@ -12,6 +12,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
    
@@ -78,26 +79,26 @@ transformations for faster optimization.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>theta_init</strong> (<em>array</em><em>(</em><em>float</em><em>)</em>) – starting values of parameter vector</p></li>
-<li><p><strong>theta_num</strong> (<em>type</em>) – Description of parameter <cite>theta_num</cite>.</p></li>
-<li><p><strong>loss_func</strong> (<em>type</em>) – Description of parameter <cite>loss_func</cite>.</p></li>
-<li><p><strong>method</strong> (<em>type</em>) – Description of parameter <cite>method</cite>.</p></li>
-<li><p><strong>direction</strong> (<em>type</em>) – Description of parameter <cite>direction</cite>.</p></li>
-<li><p><strong>loss_crit</strong> (<em>type</em>) – Description of parameter <cite>loss_crit</cite>.</p></li>
-<li><p><strong>scale</strong> (<em>type</em>) – Description of parameter <cite>scale</cite>.</p></li>
-<li><p><strong>theta_bounds</strong> (<em>type</em>) – Description of parameter <cite>theta_bounds</cite>.</p></li>
-<li><p><strong>scan_bound</strong> (<em>type</em>) – Description of parameter <cite>scan_bound</cite>.</p></li>
-<li><p><strong>scan_tol</strong> (<em>type</em>) – Description of parameter <cite>scan_tol</cite>.</p></li>
-<li><p><strong>loss_tol</strong> (<em>type</em>) – Description of parameter <cite>loss_tol</cite>.</p></li>
-<li><p><strong>local_alg</strong> (<em>type</em>) – Description of parameter <cite>local_alg</cite>.</p></li>
-<li><p><strong>**kwargs</strong> (<em>type</em>) – Description of parameter <cite>**kwargs</cite>.</p></li>
+<li><p><strong>theta_init</strong> (<em>Array</em><em>[</em><em>Float64</em><em>]</em>) – starting values of parameter vector theta. The starting values is not necessary to be the optimum values for <cite>loss_func</cite> but it the value of <cite>loss_func</cite> must be lower than <cite>loss_crit</cite>.</p></li>
+<li><p><strong>theta_num</strong> (<em>Int</em>) – number n of vector component to compute confidence interval <a href="#id1"><span class="problematic" id="id2">`</span></a>theta^n.</p></li>
+<li><p><strong>loss_func</strong> (<em>Function</em>) – loss function the profile of which is analyzed. Usually we use log-likelihood for profile analysis in form <code class="docutils literal notranslate"><span class="pre">\Lambda(</span> <span class="pre">\theta</span> <span class="pre">)</span> <span class="pre">=</span> <span class="pre">-</span> <span class="pre">2</span> <span class="pre">ln\left(</span> <span class="pre">L(\theta)</span> <span class="pre">\right)</span></code>.</p></li>
+<li><p><strong>method</strong> (<em>String</em>) – computational method to evaluate interval endpoint. Currently the following methods are implemented: <cite>CICO_ONE_PASS</cite>, <cite>LIN_EXTRAPOL</cite>, <cite>QUADR_EXTRAPOL</cite>.</p></li>
+<li><p><strong>direction</strong> (<em>String</em>) – <cite>right</cite> or <cite>left</cite> endpoint to estimate.</p></li>
+<li><p><strong>loss_crit</strong> (<em>Float64</em>) – </p></li>
+<li><p><strong>scale</strong> (<em>String</em>) – </p></li>
+<li><p><strong>theta_bounds</strong> (<em>Flaot64</em>) – </p></li>
+<li><p><strong>scan_bound</strong> (<em>Float64</em>) – </p></li>
+<li><p><strong>scan_tol</strong> (<em>Float64</em>) – </p></li>
+<li><p><strong>loss_tol</strong> (<em>Float64</em>) – </p></li>
+<li><p><strong>local_alg</strong> (<em>String</em>) – </p></li>
+<li><p><strong>**kwargs</strong> (<em>type</em>) – other options for get_right_endpoint</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Description of returned object.</p>
+<dd class="field-even"><p>structure storing all input data and estimated confidence interval.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>type</p>
+<dd class="field-odd"><p>class ParamInterval</p>
 </dd>
 </dl>
 </dd></dl>
@@ -109,6 +110,17 @@ transformations for faster optimization.</p>
 <dt id="likelihoodprofiler.get_interval.ParamInterval">
 <em class="property">class </em><code class="sig-prename descclassname">likelihoodprofiler.get_interval.</code><code class="sig-name descname">ParamInterval</code><span class="sig-paren">(</span><em class="sig-param">input</em>, <em class="sig-param">loss_init</em>, <em class="sig-param">method</em>, <em class="sig-param">result</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.get_interval.ParamInterval" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Structure storing result of parameter interval calculation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input</strong> (<a class="reference internal" href="#likelihoodprofiler.get_interval.ParamIntervalInput" title="likelihoodprofiler.get_interval.ParamIntervalInput"><em>ParamIntervalInput</em></a>) – </p></li>
+<li><p><strong>loss_init</strong> (<em>Float64</em>) – </p></li>
+<li><p><strong>method</strong> (<em>String</em>) – </p></li>
+<li><p><strong>result</strong> (<em>Array</em><em>[</em><a class="reference internal" href="#likelihoodprofiler.structures.EndPoint" title="likelihoodprofiler.structures.EndPoint"><em>EndPoint</em></a><em>, </em><a class="reference internal" href="#likelihoodprofiler.structures.EndPoint" title="likelihoodprofiler.structures.EndPoint"><em>EndPoint</em></a><em>]</em>) – </p></li>
+</ul>
+</dd>
+</dl>
 <dl class="method">
 <dt id="likelihoodprofiler.get_interval.ParamInterval.plot">
 <code class="sig-name descname">plot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.get_interval.ParamInterval.plot" title="Permalink to this definition">¶</a></dt>
@@ -120,12 +132,58 @@ transformations for faster optimization.</p>
 <dt id="likelihoodprofiler.get_interval.ParamIntervalInput">
 <em class="property">class </em><code class="sig-prename descclassname">likelihoodprofiler.get_interval.</code><code class="sig-name descname">ParamIntervalInput</code><span class="sig-paren">(</span><em class="sig-param">theta_init</em>, <em class="sig-param">theta_num</em>, <em class="sig-param">loss_func</em>, <em class="sig-param">loss_crit</em>, <em class="sig-param">scale</em>, <em class="sig-param">theta_bounds</em>, <em class="sig-param">scan_bounds</em>, <em class="sig-param">scan_tol</em>, <em class="sig-param">loss_tol</em>, <em class="sig-param">local_alg</em>, <em class="sig-param">fitter_options</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.get_interval.ParamIntervalInput" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Calculates right or left endpoint of CI for parameter component. It is a wripper
+of <cite>get_right_endpoint</cite> functions for selection of direction and using different
+transformations for faster optimization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>theta_init</strong> (<em>Array</em><em>[</em><em>Float64</em><em>]</em>) – initial parameters vector</p></li>
+<li><p><strong>theta_num</strong> (<em>Int</em>) – number of the parameter for analysis</p></li>
+<li><p><strong>loss_func</strong> (<em>Function</em>) – loss function</p></li>
+<li><p><strong>loss_crit</strong> (<em>Float64</em>) – loss function maximum value, “identifiability level</p></li>
+<li><p><strong>scale</strong> (<em>Array</em><em>[</em><em>String</em><em>]</em>) – </p></li>
+<li><p><strong>theta_bounds</strong> (<em>Array</em><em>[</em><em>[</em><em>Float64</em><em>, </em><em>Float64</em><em>]</em><em>]</em>) – search bounds for id parameter</p></li>
+<li><p><strong>scan_bounds</strong> (<em>Float64</em>) – </p></li>
+<li><p><strong>scan_tol</strong> (<em>Float64</em>) – fitting tolerance for local optimizer (default - 1e-3)</p></li>
+<li><p><strong>loss_tol</strong> (<em>Float64</em>) – constraints tolerance</p></li>
+<li><p><strong>local_alg</strong> (<em>Function</em>) – local fitting algorithm (default - LN_NELDERMEAD)</p></li>
+<li><p><strong>fitter_options</strong> (<em>Any</em>) – </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="likelihoodprofiler.get_interval.get_interval">
 <code class="sig-prename descclassname">likelihoodprofiler.get_interval.</code><code class="sig-name descname">get_interval</code><span class="sig-paren">(</span><em class="sig-param">theta_init</em>, <em class="sig-param">theta_num</em>, <em class="sig-param">loss_func</em>, <em class="sig-param">method</em>, <em class="sig-param">loss_crit=0.0</em>, <em class="sig-param">scale=[]</em>, <em class="sig-param">theta_bounds=[]</em>, <em class="sig-param">scan_bounds=None</em>, <em class="sig-param">scan_tol=0.001</em>, <em class="sig-param">loss_tol=0.001</em>, <em class="sig-param">local_alg=28</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.get_interval.get_interval" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Computes confidence interval for single component <cite>theta_num</cite> of parameter vector
+and <cite>loss_func</cite> according to <cite>loss_crit</cite> level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>theta_init</strong> (<em>Array</em><em>[</em><em>Float64</em><em>]</em>) – starting values of parameter vector <span class="math notranslate nohighlight">\(\Theta\)</span>. The starting values is not necessary to be the optimum values for <cite>loss_func</cite> but it the value of <code class="code docutils literal notranslate"><span class="pre">loss_func</span></code> must be lower than <code class="code docutils literal notranslate"><span class="pre">loss_crit</span></code>.</p></li>
+<li><p><strong>theta_num</strong> (<em>Int</em>) – number <cite>n</cite> of vector component to compute confidence interval <span class="math notranslate nohighlight">\(\Theta^n\)</span>.</p></li>
+<li><p><strong>loss_func</strong> (<em>Function</em>) – loss function <span class="math notranslate nohighlight">\(\Lambda\left(\theta\right)\)</span> the profile of which is analyzed. Usually we use log-likelihood for profile analysis in form <span class="math notranslate nohighlight">\(\Lambda( \theta ) = - 2 ln\left( L(\theta) \right)\)</span>.</p></li>
+<li><p><strong>method</strong> (<em>String</em>) – computational method to evaluate interval endpoint. Currently the following methods are implemented: <code class="code docutils literal notranslate"><span class="pre">CICO_ONE_PASS</span></code>, <code class="code docutils literal notranslate"><span class="pre">LIN_EXTRAPOL</span></code>, <code class="code docutils literal notranslate"><span class="pre">QUADR_EXTRAPOL</span></code>.</p></li>
+<li><p><strong>loss_crit</strong> (<em>Float64</em>) – critical level of loss function. The endpoint of CI for selected parameter is the value at which profile likelihood meets the value of <code class="code docutils literal notranslate"><span class="pre">loss_crit</span></code>.</p></li>
+<li><p><strong>scale</strong> (<em>String</em>) – vector of scale transformations for each component. Possible values: <code class="code docutils literal notranslate"><span class="pre">&quot;direct&quot;,</span> <span class="pre">&quot;log&quot;,</span> <span class="pre">&quot;logit&quot;</span></code>. This option can make optimization much more faster, especially for wide <code class="code docutils literal notranslate"><span class="pre">theta_bounds</span></code>. The default value is <code class="code docutils literal notranslate"><span class="pre">&quot;direct&quot;</span></code> (no transformation) for all components.</p></li>
+<li><p><strong>theta_bounds</strong> (<em>Array</em><em>[</em><em>Array</em><em>[</em><em>Float64</em><em>,</em><em>Float64</em><em>]</em><em>]</em>) – vector of bounds for each component in format <span class="math notranslate nohighlight">\((left_border, right_border)\)</span>. This bounds define the ranges for possible parameter values. The defaults are the non-limited values taking into account the <code class="code docutils literal notranslate"><span class="pre">scale</span></code>, i.e. <span class="math notranslate nohighlight">\((0, Inf)\)</span> for <code class="code docutils literal notranslate"><span class="pre">&quot;log&quot;</span></code> scale.</p></li>
+<li><p><strong>scan_bounds</strong> (<em>Array</em><em>[</em><em>Float64</em><em>,</em><em>Float64</em><em>]</em>) – vector of scan bound for <code class="code docutils literal notranslate"><span class="pre">theta_num</span></code> component. It must be within the <code class="code docutils literal notranslate"><span class="pre">theta_bounds</span></code> for the scanned component. The defaults are <cite>(-9., 9.) for transformed values, i.e. :math:`(1e-9, 1e9)</cite> for <code class="code docutils literal notranslate"><span class="pre">&quot;log&quot;</span></code> scale.</p></li>
+<li><p><strong>scan_tol</strong> (<em>Float64</em>) – Absolute tolerance of scanned component (stop criterion).</p></li>
+<li><p><strong>loss_tol</strong> (<em>Float64</em>) – Absolute tolerance of <code class="code docutils literal notranslate"><span class="pre">loss_func</span></code> at <code class="code docutils literal notranslate"><span class="pre">loss_crit</span></code> (stop criterion). <em>Restriction</em>. Currently is not effective for <code class="code docutils literal notranslate"><span class="pre">nlopt.CICO_ONE_PASS</span></code> methods because of limitation in <code class="code docutils literal notranslate"><span class="pre">nlopt.LN_AUGLAG</span></code> interface.</p></li>
+<li><p><strong>local_alg</strong> (<em>Function</em>) – algorithm of optimization. Currently the local derivation free algorithms form NLOPT pack were tested. The methods: <code class="code docutils literal notranslate"><span class="pre">nlopt.LN_NELDERMEAD,</span> <span class="pre">nlopt.LN_COBYLA,</span> <span class="pre">nlopt.LN_PRAXIS</span></code> show good results. Methods: <code class="code docutils literal notranslate"><span class="pre">nlopt.LN_BOBYQA,</span> <span class="pre">nlopt.LN_SBPLX,</span> <span class="pre">nlopt.LN_NEWUOA</span></code> is not recommended.</p></li>
+<li><p><strong>**kwargs</strong> (<em>Any</em>) – the additional keyword arguments passed to <code class="code docutils literal notranslate"><span class="pre">get_right_endpoint</span></code> for specific <code class="code docutils literal notranslate"><span class="pre">method</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>structure storing all input data and estimated confidence interval.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#likelihoodprofiler.get_interval.ParamInterval" title="likelihoodprofiler.get_interval.ParamInterval">ParamInterval</a></p>
+</dd>
+</dl>
+</dd></dl>
 
 </div>
 <div class="section" id="module-likelihoodprofiler.get_right_endpoint">

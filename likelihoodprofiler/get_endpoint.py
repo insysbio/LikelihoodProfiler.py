@@ -31,7 +31,7 @@ def get_endpoint(
     theta_num : Int
         number n of vector component to compute confidence interval `theta^n.
     loss_func : Function
-        loss function ``\\Lambda\\left(\\theta\\right)`` the profile of which is analyzed. Usually we use log-likelihood for profile analysis in form ``\\Lambda( \\theta ) = - 2 ln\\left( L(\\theta) \\right)``.
+        loss function the profile of which is analyzed. Usually we use log-likelihood for profile analysis in form ``\\Lambda( \\theta ) = - 2 ln\\left( L(\\theta) \\right)``.
     method : String
         computational method to evaluate interval endpoint. Currently the following methods are implemented: `CICO_ONE_PASS`, `LIN_EXTRAPOL`, `QUADR_EXTRAPOL`.
     direction : String

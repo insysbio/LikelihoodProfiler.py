@@ -29,9 +29,7 @@ from .get_right_endpoint import get_right_endpoint
         kwargs...
         )
 
-Calculates right or left endpoint of CI for parameter component. It is a wripper
-of `get_right_endpoint` functions for selection of direction and using different
-transformations for faster optimization.
+
 
 ## Return
 [`EndPoint`](@ref) object storing confidence endpoint and profile points found on fly.
@@ -62,6 +60,45 @@ def get_endpoint(
     loss_tol=1e-3,
     local_alg=nlopt.LN_NELDERMEAD,
     **kwargs):
+    """Calculates right or left endpoint of CI for parameter component. It is a wripper
+    of `get_right_endpoint` functions for selection of direction and using different
+    transformations for faster optimization.
+
+    Parameters
+    ----------
+    theta_init : array(float)
+        starting values of parameter vector
+    theta_num : type
+        Description of parameter `theta_num`.
+    loss_func : type
+        Description of parameter `loss_func`.
+    method : type
+        Description of parameter `method`.
+    direction : type
+        Description of parameter `direction`.
+    loss_crit : type
+        Description of parameter `loss_crit`.
+    scale : type
+        Description of parameter `scale`.
+    theta_bounds : type
+        Description of parameter `theta_bounds`.
+    scan_bound : type
+        Description of parameter `scan_bound`.
+    scan_tol : type
+        Description of parameter `scan_tol`.
+    loss_tol : type
+        Description of parameter `loss_tol`.
+    local_alg : type
+        Description of parameter `local_alg`.
+    **kwargs : type
+        Description of parameter `**kwargs`.
+
+    Returns
+    -------
+    type
+        Description of returned object.
+
+    """
     if len(scale) == 0:
         scale = np.tile("direct", len(theta_init))
 

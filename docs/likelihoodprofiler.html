@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>likelihoodprofiler package &#8212; likelihoodprofiler 0.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="likelihoodprofiler-package">
+<h1>likelihoodprofiler package<a class="headerlink" href="#likelihoodprofiler-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="likelihoodprofiler.tests.html">likelihoodprofiler.tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="likelihoodprofiler.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="likelihoodprofiler.tests.html#module-likelihoodprofiler.tests.cases_func">likelihoodprofiler.tests.cases_func module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="likelihoodprofiler.tests.html#module-likelihoodprofiler.tests.test_cico">likelihoodprofiler.tests.test_cico module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="likelihoodprofiler.tests.html#module-likelihoodprofiler.tests.test_get_endpoint">likelihoodprofiler.tests.test_get_endpoint module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="likelihoodprofiler.tests.html#module-likelihoodprofiler.tests.test_get_interval">likelihoodprofiler.tests.test_get_interval module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="likelihoodprofiler.tests.html#module-likelihoodprofiler.tests.test_lin_extrapol">likelihoodprofiler.tests.test_lin_extrapol module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="likelihoodprofiler.tests.html#module-likelihoodprofiler.tests.test_profile">likelihoodprofiler.tests.test_profile module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="likelihoodprofiler.tests.html#module-likelihoodprofiler.tests.test_quadr_extrapol">likelihoodprofiler.tests.test_quadr_extrapol module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="likelihoodprofiler.tests.html#module-likelihoodprofiler.tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-likelihoodprofiler.cico_one_pass">
+<span id="likelihoodprofiler-cico-one-pass-module"></span><h2>likelihoodprofiler.cico_one_pass module<a class="headerlink" href="#module-likelihoodprofiler.cico_one_pass" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="likelihoodprofiler.cico_one_pass.get_right_endpoint_cico">
+<code class="sig-prename descclassname">likelihoodprofiler.cico_one_pass.</code><code class="sig-name descname">get_right_endpoint_cico</code><span class="sig-paren">(</span><em class="sig-param">theta_init</em>, <em class="sig-param">theta_num</em>, <em class="sig-param">loss_func</em>, <em class="sig-param">theta_bounds=None</em>, <em class="sig-param">scan_bound=9.0</em>, <em class="sig-param">scan_tol=0.001</em>, <em class="sig-param">loss_tol=0.001</em>, <em class="sig-param">max_iter=100000</em>, <em class="sig-param">local_alg=28</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.cico_one_pass.get_right_endpoint_cico" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="likelihoodprofiler.cico_one_pass.get_right_endpoint_cico_with_scan_func">
+<code class="sig-prename descclassname">likelihoodprofiler.cico_one_pass.</code><code class="sig-name descname">get_right_endpoint_cico_with_scan_func</code><span class="sig-paren">(</span><em class="sig-param">theta_init</em>, <em class="sig-param">loss_func</em>, <em class="sig-param">scan_func</em>, <em class="sig-param">theta_bounds=None</em>, <em class="sig-param">scan_bound=9.0</em>, <em class="sig-param">scan_tol=0.001</em>, <em class="sig-param">loss_tol=0.001</em>, <em class="sig-param">local_alg=28</em>, <em class="sig-param">max_iter=100000</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.cico_one_pass.get_right_endpoint_cico_with_scan_func" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-likelihoodprofiler.get_endpoint">
+<span id="likelihoodprofiler-get-endpoint-module"></span><h2>likelihoodprofiler.get_endpoint module<a class="headerlink" href="#module-likelihoodprofiler.get_endpoint" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="likelihoodprofiler.get_endpoint.get_endpoint">
+<code class="sig-prename descclassname">likelihoodprofiler.get_endpoint.</code><code class="sig-name descname">get_endpoint</code><span class="sig-paren">(</span><em class="sig-param">theta_init</em>, <em class="sig-param">theta_num</em>, <em class="sig-param">loss_func</em>, <em class="sig-param">method</em>, <em class="sig-param">direction='right'</em>, <em class="sig-param">loss_crit=0.0</em>, <em class="sig-param">scale=[]</em>, <em class="sig-param">theta_bounds=[]</em>, <em class="sig-param">scan_bound=None</em>, <em class="sig-param">scan_tol=0.001</em>, <em class="sig-param">loss_tol=0.001</em>, <em class="sig-param">local_alg=28</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.get_endpoint.get_endpoint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-likelihoodprofiler.get_interval">
+<span id="likelihoodprofiler-get-interval-module"></span><h2>likelihoodprofiler.get_interval module<a class="headerlink" href="#module-likelihoodprofiler.get_interval" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="likelihoodprofiler.get_interval.ParamInterval">
+<em class="property">class </em><code class="sig-prename descclassname">likelihoodprofiler.get_interval.</code><code class="sig-name descname">ParamInterval</code><span class="sig-paren">(</span><em class="sig-param">input</em>, <em class="sig-param">loss_init</em>, <em class="sig-param">method</em>, <em class="sig-param">result</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.get_interval.ParamInterval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="likelihoodprofiler.get_interval.ParamInterval.plot">
+<code class="sig-name descname">plot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.get_interval.ParamInterval.plot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="likelihoodprofiler.get_interval.ParamIntervalInput">
+<em class="property">class </em><code class="sig-prename descclassname">likelihoodprofiler.get_interval.</code><code class="sig-name descname">ParamIntervalInput</code><span class="sig-paren">(</span><em class="sig-param">theta_init</em>, <em class="sig-param">theta_num</em>, <em class="sig-param">loss_func</em>, <em class="sig-param">loss_crit</em>, <em class="sig-param">scale</em>, <em class="sig-param">theta_bounds</em>, <em class="sig-param">scan_bounds</em>, <em class="sig-param">scan_tol</em>, <em class="sig-param">loss_tol</em>, <em class="sig-param">local_alg</em>, <em class="sig-param">fitter_options</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.get_interval.ParamIntervalInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="likelihoodprofiler.get_interval.get_interval">
+<code class="sig-prename descclassname">likelihoodprofiler.get_interval.</code><code class="sig-name descname">get_interval</code><span class="sig-paren">(</span><em class="sig-param">theta_init</em>, <em class="sig-param">theta_num</em>, <em class="sig-param">loss_func</em>, <em class="sig-param">method</em>, <em class="sig-param">loss_crit=0.0</em>, <em class="sig-param">scale=[]</em>, <em class="sig-param">theta_bounds=[]</em>, <em class="sig-param">scan_bounds=None</em>, <em class="sig-param">scan_tol=0.001</em>, <em class="sig-param">loss_tol=0.001</em>, <em class="sig-param">local_alg=28</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.get_interval.get_interval" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-likelihoodprofiler.get_right_endpoint">
+<span id="likelihoodprofiler-get-right-endpoint-module"></span><h2>likelihoodprofiler.get_right_endpoint module<a class="headerlink" href="#module-likelihoodprofiler.get_right_endpoint" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="likelihoodprofiler.get_right_endpoint.get_right_endpoint">
+<code class="sig-prename descclassname">likelihoodprofiler.get_right_endpoint.</code><code class="sig-name descname">get_right_endpoint</code><span class="sig-paren">(</span><em class="sig-param">theta_init</em>, <em class="sig-param">theta_num</em>, <em class="sig-param">loss_func</em>, <em class="sig-param">method='CICO_ONE_PASS'</em>, <em class="sig-param">theta_bounds=[]</em>, <em class="sig-param">scan_bound=9.0</em>, <em class="sig-param">scan_tol=0.001</em>, <em class="sig-param">loss_tol=None</em>, <em class="sig-param">scan_hini=1.0</em>, <em class="sig-param">scan_hmax=inf</em>, <em class="sig-param">local_alg=28</em>, <em class="sig-param">max_iter=100000</em>, <em class="sig-param">ftol_abs=0.001</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.get_right_endpoint.get_right_endpoint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-likelihoodprofiler.get_right_endpoint_by_lin_extrapol">
+<span id="likelihoodprofiler-get-right-endpoint-by-lin-extrapol-module"></span><h2>likelihoodprofiler.get_right_endpoint_by_lin_extrapol module<a class="headerlink" href="#module-likelihoodprofiler.get_right_endpoint_by_lin_extrapol" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="likelihoodprofiler.get_right_endpoint_by_lin_extrapol.get_right_endpoint_by_lin_extrapol">
+<code class="sig-prename descclassname">likelihoodprofiler.get_right_endpoint_by_lin_extrapol.</code><code class="sig-name descname">get_right_endpoint_by_lin_extrapol</code><span class="sig-paren">(</span><em class="sig-param">theta_init</em>, <em class="sig-param">theta_num</em>, <em class="sig-param">loss_func</em>, <em class="sig-param">theta_bounds=[]</em>, <em class="sig-param">scan_bound=9.0</em>, <em class="sig-param">scan_tol=0.001</em>, <em class="sig-param">loss_tol=0</em>, <em class="sig-param">scan_hini=1</em>, <em class="sig-param">scan_hmax=inf</em>, <em class="sig-param">local_alg=28</em>, <em class="sig-param">max_iter=100000</em>, <em class="sig-param">ftol_abs=0.001</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.get_right_endpoint_by_lin_extrapol.get_right_endpoint_by_lin_extrapol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-likelihoodprofiler.method_quadr_extrapol">
+<span id="likelihoodprofiler-method-quadr-extrapol-module"></span><h2>likelihoodprofiler.method_quadr_extrapol module<a class="headerlink" href="#module-likelihoodprofiler.method_quadr_extrapol" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="likelihoodprofiler.method_quadr_extrapol.get_right_endpoint_by_quadr_extrapol">
+<code class="sig-prename descclassname">likelihoodprofiler.method_quadr_extrapol.</code><code class="sig-name descname">get_right_endpoint_by_quadr_extrapol</code><span class="sig-paren">(</span><em class="sig-param">theta_init</em>, <em class="sig-param">theta_num</em>, <em class="sig-param">loss_func</em>, <em class="sig-param">theta_bounds=[]</em>, <em class="sig-param">scan_bound=9.0</em>, <em class="sig-param">scan_tol=0.001</em>, <em class="sig-param">loss_tol=0</em>, <em class="sig-param">scan_hini=1.0</em>, <em class="sig-param">scan_hmax=inf</em>, <em class="sig-param">local_alg=28</em>, <em class="sig-param">max_iter=100000</em>, <em class="sig-param">ftol_abs=0.001</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.method_quadr_extrapol.get_right_endpoint_by_quadr_extrapol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-likelihoodprofiler.profile">
+<span id="likelihoodprofiler-profile-module"></span><h2>likelihoodprofiler.profile module<a class="headerlink" href="#module-likelihoodprofiler.profile" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="likelihoodprofiler.profile.profile">
+<code class="sig-prename descclassname">likelihoodprofiler.profile.</code><code class="sig-name descname">profile</code><span class="sig-paren">(</span><em class="sig-param">theta_init</em>, <em class="sig-param">theta_num</em>, <em class="sig-param">loss_func</em>, <em class="sig-param">skip_optim=False</em>, <em class="sig-param">theta_bounds=None</em>, <em class="sig-param">local_alg=28</em>, <em class="sig-param">ftol_abs=0.001</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.profile.profile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-likelihoodprofiler.structures">
+<span id="likelihoodprofiler-structures-module"></span><h2>likelihoodprofiler.structures module<a class="headerlink" href="#module-likelihoodprofiler.structures" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="likelihoodprofiler.structures.EndPoint">
+<em class="property">class </em><code class="sig-prename descclassname">likelihoodprofiler.structures.</code><code class="sig-name descname">EndPoint</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">profilePoints</em>, <em class="sig-param">status</em>, <em class="sig-param">direction</em>, <em class="sig-param">counter</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.structures.EndPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Structure storing end point for confidence interval.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="likelihoodprofiler.structures.ProfilePoint">
+<em class="property">class </em><code class="sig-prename descclassname">likelihoodprofiler.structures.</code><code class="sig-name descname">ProfilePoint</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">loss</em>, <em class="sig-param">params</em>, <em class="sig-param">ret</em>, <em class="sig-param">counter</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.structures.ProfilePoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Structure storing one point from profile function.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-likelihoodprofiler.support_math_func">
+<span id="likelihoodprofiler-support-math-func-module"></span><h2>likelihoodprofiler.support_math_func module<a class="headerlink" href="#module-likelihoodprofiler.support_math_func" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="likelihoodprofiler.support_math_func.logistic10">
+<code class="sig-prename descclassname">likelihoodprofiler.support_math_func.</code><code class="sig-name descname">logistic10</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.support_math_func.logistic10" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="likelihoodprofiler.support_math_func.logit10">
+<code class="sig-prename descclassname">likelihoodprofiler.support_math_func.</code><code class="sig-name descname">logit10</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.support_math_func.logit10" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="likelihoodprofiler.support_math_func.scaling">
+<code class="sig-prename descclassname">likelihoodprofiler.support_math_func.</code><code class="sig-name descname">scaling</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">scale='direct'</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.support_math_func.scaling" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="likelihoodprofiler.support_math_func.unscaling">
+<code class="sig-prename descclassname">likelihoodprofiler.support_math_func.</code><code class="sig-name descname">unscaling</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">scale='direct'</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.support_math_func.unscaling" title="Permalink to this definition">¶</a></dt>
+<dd><p>print(“—UNSCALING—”)
+print(x)
+print(scale)
+print(“—UNSCALING—”)</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-likelihoodprofiler">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-likelihoodprofiler" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">likelihoodprofiler</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Evgeny Metelkin, Ivan Borisov, Victoria Tkachenko.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/likelihoodprofiler.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

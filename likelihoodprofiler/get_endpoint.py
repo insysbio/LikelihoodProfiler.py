@@ -5,46 +5,6 @@ from .support_math_func import scaling, unscaling
 from .structures import ProfilePoint, EndPoint
 from .get_right_endpoint import get_right_endpoint
 
-"""
-    function get_endpoint(
-        theta_init::Vector{Float64},
-        theta_num::Int,
-        loss_func::Function,
-        method::Symbol,
-        direction::Symbol = :right;
-
-        loss_crit::Float64 = 0.0,
-        scale::Vector{Symbol} = fill(:direct, length(theta_init)),
-        theta_bounds::Vector{Tuple{Float64,Float64}} = unscaling.(
-            fill((-Inf, Inf), length(theta_init)),
-            scale
-            ),
-        scan_bound::Float64 = unscaling(
-            (direction==:left) ? -9.0 : 9.0,
-            scale[theta_num]
-            ),
-        scan_tol::Float64 = 1e-3,
-        loss_tol::Float64 = 1e-3,
-        local_alg::Symbol = :LN_NELDERMEAD,
-        kwargs...
-        )
-
-
-
-## Return
-[`EndPoint`](@ref) object storing confidence endpoint and profile points found on fly.
-
-## Arguments
-- `theta_init`: starting values of parameter vector ``\\theta``. The starting values is not necessary to be the optimum values for `loss_func` but it the value of `loss_func` must be lower than `loss_crit`.
-- `theta_num`: number ``n`` of vector component to compute confidence interval ``\\theta^n``.
-- `loss_func`: loss function ``\\Lambda\\left(\\theta\\right)`` the profile of which is analyzed. Usually we use log-likelihood for profile analysis in form ``\\Lambda( \\theta ) = - 2 ln\\left( L(\\theta) \\right)``.
-- `method`: computational method to evaluate interval endpoint. Currently the following methods are implemented: `:CICO_ONE_PASS`, `:LIN_EXTRAPOL`, `:QUADR_EXTRAPOL`.
-- `direction`: `:right` or `:left` endpoint to estimate.
-
-## Keyword arguments
-see [`get_interval`](@ref)
-
-"""
 
 def get_endpoint(
     theta_init,
@@ -66,37 +26,37 @@ def get_endpoint(
 
     Parameters
     ----------
-    theta_init : array(float)
-        starting values of parameter vector
-    theta_num : type
-        Description of parameter `theta_num`.
-    loss_func : type
-        Description of parameter `loss_func`.
-    method : type
-        Description of parameter `method`.
-    direction : type
-        Description of parameter `direction`.
-    loss_crit : type
-        Description of parameter `loss_crit`.
-    scale : type
-        Description of parameter `scale`.
-    theta_bounds : type
-        Description of parameter `theta_bounds`.
-    scan_bound : type
-        Description of parameter `scan_bound`.
-    scan_tol : type
-        Description of parameter `scan_tol`.
-    loss_tol : type
-        Description of parameter `loss_tol`.
-    local_alg : type
-        Description of parameter `local_alg`.
+    theta_init : Array[Float64]
+        starting values of parameter vector theta. The starting values is not necessary to be the optimum values for `loss_func` but it the value of `loss_func` must be lower than `loss_crit`.
+    theta_num : Int
+        number n of vector component to compute confidence interval `theta^n.
+    loss_func : Function
+        loss function ``\\Lambda\\left(\\theta\\right)`` the profile of which is analyzed. Usually we use log-likelihood for profile analysis in form ``\\Lambda( \\theta ) = - 2 ln\\left( L(\\theta) \\right)``.
+    method : String
+        computational method to evaluate interval endpoint. Currently the following methods are implemented: `CICO_ONE_PASS`, `LIN_EXTRAPOL`, `QUADR_EXTRAPOL`.
+    direction : String
+        `right` or `left` endpoint to estimate.
+    loss_crit : Float64
+
+    scale : String
+
+    theta_bounds : Flaot64
+
+    scan_bound : Float64
+
+    scan_tol : Float64
+
+    loss_tol : Float64
+
+    local_alg : String
+
     **kwargs : type
-        Description of parameter `**kwargs`.
+         other options for get_right_endpoint
 
     Returns
     -------
-    type
-        Description of returned object.
+    class ParamInterval
+         structure storing all input data and estimated confidence interval.
 
     """
     if len(scale) == 0:

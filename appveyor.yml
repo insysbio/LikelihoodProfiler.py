@@ -6,8 +6,6 @@ environment:
 
 build: off
 
-install:
-
 branches:
   only:
     - master

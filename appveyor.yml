@@ -1,0 +1,29 @@
+environment:
+  matrix:
+  - TOXENV: py27
+  - TOXENV: py35
+  - TOXENV: py36
+  - TOXENV: py37
+
+build: off
+
+install:
+
+branches:
+  only:
+    - master
+    #- dev
+    #- /release-.*/
+
+#notifications:
+#  - provider: Email
+#    on_build_success: false
+#    on_build_failure: false
+#    on_build_status_changed: false
+
+install:
+  - pip install tox
+  #- pip install -r requirements.txt
+
+test_script:
+  - tox

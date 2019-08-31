@@ -1,4 +1,4 @@
-
+environment:
   matrix:
     - PYTHON: C:\Python37-x64
       PYTHON_VERSION: 3.7

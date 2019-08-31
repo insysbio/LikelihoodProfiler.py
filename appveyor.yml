@@ -19,8 +19,8 @@ branches:
 #    on_build_status_changed: false
 
 install:
+  - pip install -r requirements.txt
   - pip install tox
-  #- pip install -r requirements.txt
 
 test_script:
   - tox

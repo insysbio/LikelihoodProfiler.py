@@ -49,7 +49,8 @@
       PYTHON_VERSION: 2.7
       PYTHON_ARCH: 32
       TEST_LIBRARIES_ONLY: False
-build: off
+
+build: none
 
 branches:
   only:

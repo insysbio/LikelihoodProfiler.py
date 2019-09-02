@@ -1,54 +1,8 @@
 environment:
   matrix:
-    - PYTHON: C:\Python37-x64
-      PYTHON_VERSION: 3.7
-      PYTHON_ARCH: 64
-      TEST_LIBRARIES_ONLY: True
-
-    - PYTHON: C:\Python37-x64
-      PYTHON_VERSION: 3.7
-      PYTHON_ARCH: 64
-      TEST_LIBRARIES_ONLY: False
-
-    - PYTHON: C:\Python37
-      PYTHON_VERSION: 3.7
-      PYTHON_ARCH: 32
-      TEST_LIBRARIES_ONLY: True
-
-    - PYTHON: C:\Python37
-      PYTHON_VERSION: 3.7
-      PYTHON_ARCH: 32
-      TEST_LIBRARIES_ONLY: False
-
-    - PYTHON: C:\Python36
-      PYTHON_VERSION: 3.6
-      PYTHON_ARCH: 32
-      TEST_LIBRARIES_ONLY: True
-
-    - PYTHON: C:\Python36
-      PYTHON_VERSION: 3.6
-      PYTHON_ARCH: 32
-      TEST_LIBRARIES_ONLY: False
-
-    - PYTHON: C:\Python35
-      PYTHON_VERSION: 3.5
-      PYTHON_ARCH: 32
-      TEST_LIBRARIES_ONLY: True
-
-    - PYTHON: C:\Python35
-      PYTHON_VERSION: 3.5
-      PYTHON_ARCH: 32
-      TEST_LIBRARIES_ONLY: False
-
-    - PYTHON: C:\Python27
-      PYTHON_VERSION: 2.7
-      PYTHON_ARCH: 32
-      TEST_LIBRARIES_ONLY: True
-
-    - PYTHON: C:\Python27
-      PYTHON_VERSION: 2.7
-      PYTHON_ARCH: 32
-      TEST_LIBRARIES_ONLY: False
+  - TOXENV: py35
+  - TOXENV: py36
+  - TOXENV: py37
 
 build: none
 

@@ -3,14 +3,17 @@ environment:
     - PYTHON: "C:\\Python35"
       PYTHON_VERSION: "3.3.5"
       PYTHON_ARCH: "32"
+      NLOPT_WHEEL: wheel/NLopt-2.6.1-cp35-cp35m-win32.whl
 
     - PYTHON: "C:\\Python36"
       PYTHON_VERSION: "3.4.1"
       PYTHON_ARCH: "32"
+      NLOPT_WHEEL: wheel/NLopt-2.6.1-cp35-cp35m-win32.whl
 
     - PYTHON: "C:\\Python37"
       PYTHON_VERSION: "3.4.1"
       PYTHON_ARCH: "32"
+      NLOPT_WHEEL: wheel/NLopt-2.6.1-cp35-cp35m-win32.whl
 
 
 
@@ -37,7 +40,8 @@ install:
   - "%PYTHON%\\python.exe -m pip install wheel"
   - python --version
   - python -m pip install --upgrade pip
-  - pip install nlopt --no-clean
+  - pip install %NLOPT_WHEEL%
+  - pip install
   - pip install -r requirements.txt
   - pip install tox
 

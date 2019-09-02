@@ -6,7 +6,6 @@ python:
 #  - "3.8-dev"
 # command to install dependencies
 install:
-  - pip install nlopt
   - pip install -r requirements.txt
  # - pip install -r requirements_docs.txt
  # - pip install -e

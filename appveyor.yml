@@ -29,6 +29,8 @@ branches:
 #    on_build_status_changed: false
 
 install:
+  - echo %PYTHON%
+  - set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - "%PYTHON%\\python.exe -m pip install wheel"
   - python --version
   - python -m pip install --upgrade pip

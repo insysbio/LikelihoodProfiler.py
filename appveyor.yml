@@ -1,8 +1,18 @@
 environment:
   matrix:
-  - TOXENV: py35
-  - TOXENV: py36
-  - TOXENV: py37
+    - PYTHON: "C:\\Python27"
+      PYTHON_VERSION: "2.7.8"
+      PYTHON_ARCH: "32"
+
+    - PYTHON: "C:\\Python33"
+      PYTHON_VERSION: "3.3.5"
+      PYTHON_ARCH: "32"
+
+    - PYTHON: "C:\\Python34"
+      PYTHON_VERSION: "3.4.1"
+      PYTHON_ARCH: "32"
+
+
 
 build: none
 
@@ -25,4 +35,4 @@ install:
   - pip install tox
 
 test_script:
-  - tox
+  - pytest

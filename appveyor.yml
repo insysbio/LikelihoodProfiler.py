@@ -37,7 +37,7 @@ install:
   - "%PYTHON%\\python.exe -m pip install wheel"
   - python --version
   - python -m pip install --upgrade pip
-  - pip install nlopt
+  - pip install nlopt --no-clean
   - pip install -r requirements.txt
   - pip install tox
 

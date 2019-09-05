@@ -78,28 +78,28 @@ def get_endpoint(
     theta_init_outside_theta_bounds = [not(theta_bounds[i][0] < theta_init[i] < theta_bounds[i][1])
                                        for i in range(len(theta_init))]
     if any(theta_init_outside_theta_bounds):
-        raise BaseException(f"theta_init is outside theta_bound: {np.where(theta_init_outside_theta_bounds)}")
+        raise BaseException("theta_init is outside theta_bound: {}".format(np.where(theta_init_outside_theta_bounds)))
 
     # scan_bound should be within theta_bounds
     if (not(theta_bounds[theta_num][0]) < scan_bound < theta_bounds[theta_num][1]):
-        raise ValueError(f"scan_bound are outside of the theta_bounds {theta_bounds[theta_num]}")
+        raise ValueError("scan_bound are outside of the theta_bounds {}".format(theta_bounds[theta_num]))
 
     # theta_init should be within scan_bound
     if (theta_init[theta_num] >= scan_bound
         and not(isLeft)) or (theta_init[theta_num] <= scan_bound and isLeft):
-        raise ValueError(f"init values are outside of the scan_bound {scan_bound}")
+        raise ValueError("init values are outside of the scan_bound {}".format(scan_bound))
 
     # 0 <= theta_bound[1] for :log
     less_than_zero_theta_bounds = all(i == "log" for i in scale) \
                                   and [theta_bounds[i][0] < 0 for i in range(len(theta_init))]
     if less_than_zero_theta_bounds and any(less_than_zero_theta_bounds):
-        raise ValueError(f":log scaled theta_bound min is negative: {np.where(less_than_zero_theta_bounds)}")
+        raise ValueError(":log scaled theta_bound min is negative: {}".format(np.where(less_than_zero_theta_bounds)))
 
     # 0 <= theta_bounds <= 1 for :logit
     less_than_zero_theta_bounds = all(i == "logit" for i in scale) \
                                   and [theta_bounds[i][1] < 0 or theta_bounds[i][2] > 1 for i in range(len(theta_init))]
     if less_than_zero_theta_bounds and any(less_than_zero_theta_bounds):
-        raise ValueError(f":logit scaled theta_bound min is outside range [0,1]: {np.where(less_than_zero_theta_bounds)}")
+        raise ValueError(":logit scaled theta_bound min is outside range [0,1]: {}".format({np.where(less_than_zero_theta_bounds)}))
 
 
     # loss_func(theta_init) < loss_crit

@@ -3,7 +3,7 @@ environment:
     - PYTHON: "C:\\Python36"
       PYTHON_VERSION: "3.4.1"
       PYTHON_ARCH: "32"
-      NLOPT_WHEEL: wheel/NLopt-2.6.1-cp36-cp36m-win32.whl
+      NLOPT_WHEEL: https://download.lfd.uci.edu/pythonlibs/g5apjq5m/NLopt-2.6.1-cp36-cp36m-win32.whl
 
     - PYTHON: "C:\\Python37"
       PYTHON_VERSION: "3.4.1"

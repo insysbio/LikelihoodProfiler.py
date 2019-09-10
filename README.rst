@@ -1,6 +1,16 @@
 `Documentation <https://insysbio.github.io/LikelihoodProfiler.py/>`_
+.. image:: Documentation
+  :width: 455px
+  :align: center
+  :height: 312px
+  :alt: Documentation
+  :target: https://travis-ci.org/insysbio/LikelihoodProfiler.py
+  :figclass: align-center
 
 .. image:: https://travis-ci.org/insysbio/LikelihoodProfiler.py.svg?branch=master
+  :width: 455px
+  :align: center
+  :height: 312px
   :alt: Travis
   :target: https://travis-ci.org/insysbio/LikelihoodProfiler.py
   :figclass: align-center

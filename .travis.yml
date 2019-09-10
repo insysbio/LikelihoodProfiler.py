@@ -12,7 +12,7 @@ script:
   - pytest
 
 after_success:
-- sphinx-build -b html ./source ./docs
+- sphinx-build  -d .doctrees -b html ./source ./docs
 deploy:
   provider: pages
   skip-cleanup: true

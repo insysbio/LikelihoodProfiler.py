@@ -3,7 +3,8 @@
 [![AppVeyor](https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva?svg=true)](https://ci.appveyor.com/project/vetedde/likelihoodprofiler-py)
 [![DOI:10.13140/RG.2.2.18935.06563](https://zenodo.org/badge/DOI/10.13140/RG.2.2.18935.06563.svg)](https://doi.org/10.13140/RG.2.2.18935.06563)
 
-# Installation
+Installation
+*****
 
 If your OS is Windows, you have to install special wheel. Go to
 ```
@@ -14,7 +15,8 @@ For install python package, that you need, run next command
 ```
 pip install -r requirements.txt
 ```
-# Quick start
+ Quick start
+ *****
 ```
 from likelihoodprofiler import get_interval
 f_3p_1im_dep = lambda x: 5.0 + (x[0]-3.0)**2 + (x[0]-x[1]-1.0)**2 + 0*x[2]**2
@@ -26,4 +28,8 @@ res0 = get_interval(
     loss_crit = 9)
 res0.plot()
 ```
-![Plot Linear](source\plot.png?raw=true)
+.. image:: source\plot.png
+    :width: 200px
+    :align: center
+    :height: 100px
+    :alt: Plot linear

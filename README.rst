@@ -1,19 +1,8 @@
-`Documentation <https://insysbio.github.io/LikelihoodProfiler.py/>`_
-.. image:: Documentation
-  :width: 455px
-  :align: center
-  :height: 312px
-  :alt: Documentation
-  :target: https://travis-ci.org/insysbio/LikelihoodProfiler.py
-  :figclass: align-center
-
-.. image:: https://travis-ci.org/insysbio/LikelihoodProfiler.py.svg?branch=master
-  :width: 455px
-  :align: center
-  :height: 312px
-  :alt: Travis
-  :target: https://travis-ci.org/insysbio/LikelihoodProfiler.py
-  :figclass: align-center
+.. image::
+   https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva?svg=true
+   :width: 300
+   :target: https://ci.appveyor.com/project/vetedde/likelihoodprofiler-py
+   :alt: Appveyor build status
 
 Installation
 ************

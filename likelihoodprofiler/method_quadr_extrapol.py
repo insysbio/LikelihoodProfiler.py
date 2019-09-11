@@ -80,17 +80,18 @@ def get_right_endpoint_by_quadr_extrapol(
             )
         pps.append(point_3)
         accum_counter += point_3.counter # update counter
-
-        if x_3 >= scan_bound and point_3.loss < 0:
-            return (None, pps, "SCAN_BOUND_REACHED") # break
+        if point_3.ret == 5:
+            return [None, pps, "MAX_ITER_STOP"] # break
+        elif point_3.ret == -5:
+            return [None, pps, "LOSS_ERROR_STOP"]
+        elif x_3 >= scan_bound and point_3.loss < 0.:
+            return [None, pps, "SCAN_BOUND_REACHED"] # break
         # no checking for the first and second iterations
+        # elseif iteration_count>2 && isapprox(x_3, x_2, atol = scan_tol)
         elif iteration_count>1 and point_3.loss != point_2.loss and math.isclose((x_3 - x_2) * point_3.loss / (point_3.loss - point_2.loss), 0., abs_tol = scan_tol):
-            return (x_3, pps, "BORDER_FOUND_BY_SCAN_TOL") # break
+            return [x_3, pps, "BORDER_FOUND_BY_SCAN_TOL"] # break
         elif math.isclose(point_3.loss, 0, abs_tol=loss_tol):
-            return (x_3, pps, "BORDER_FOUND_BY_LOSS_TOL") # break
-        elif point_3.ret == 5:
-            return (None, pps, "MAX_ITER_REACHED") # break
-
+            return [x_3, pps, "BORDER_FOUND_BY_LOSS_TOL"] # break
         # next step
         if iteration_count == 1:
             x_4_extrapol = x_3 + scan_hini

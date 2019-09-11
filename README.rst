@@ -1,20 +1,20 @@
 .. image::
-   http://img.shields.io/badge/Docs-latest-green.svg
+   https://img.shields.io/website-up-down-green-red/https/insysbio.github.io/LikelihoodProfiler.py.svg
    :height: 20
    :target: https://insysbio.github.io/LikelihoodProfiler.py/
    :alt: Documentation
-
-.. image::
-   https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva?svg=true
-   :height: 20
-   :target: https://ci.appveyor.com/project/vetedde/likelihoodprofiler-py
-   :alt: Appveyor build status
 
 .. image::
    https://travis-ci.org/insysbio/LikelihoodProfiler.py.svg?branch=master
    :height: 20
    :target: https://travis-ci.org/insysbio/LikelihoodProfiler.py
    :alt: Travis build status
+
+.. image::
+   https://ci.appveyor.com/api/projects/status/github/insysbio/LikelihoodProfiler.py?branch=master&svg=true
+   :height: 20
+   :target: https://ci.appveyor.com/project/metelkin/likelihoodprofiler-py
+   :alt: Appveyor build status
 
 .. image::
    https://zenodo.org/badge/DOI/10.13140/RG.2.2.18935.06563.svg

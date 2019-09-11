@@ -28,9 +28,10 @@ class EndPoint:
     direction : String
     counter : Int
     """
-    def __init__(self, value, profilePoints, status, direction, counter):
+    def __init__(self, value, profilePoints, status, direction, counter, supreme):
         self.value = value
         self.profilePoints = profilePoints
         self.status = status
         self.direction = direction
         self.counter = counter
+        self.supreme = supreme

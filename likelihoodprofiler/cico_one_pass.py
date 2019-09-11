@@ -83,11 +83,17 @@ def get_right_endpoint_cico_with_scan_func(
     local_opt.set_ftol_abs(scan_tol)  # ftol_abs
 
     # Constraints function
+    out_of_bound = False
     def constraints_func(x, g):
-        loss = loss_func(x)
-        if (math.isnan(loss)):
-            raise nlopt.ForcedStop("Out of the scan bound but in ll constraint.")
+        nonlocal out_of_bound
+        try:
+            loss = loss_func(x)
+        except ValueError:
+            warnings.warn("Error when call loss_func{}".format(x), DeprecationWarning, stacklevel=2)
+            raise ValueError
+
         if (loss < 0) and (scan_func(x) > scan_bound):
+            out_of_bound = True
             raise nlopt.ForcedStop("Out of the scan bound but in ll constraint.")
         else:
             return loss
@@ -96,16 +102,21 @@ def get_right_endpoint_cico_with_scan_func(
     opt = nlopt.opt(nlopt.LN_AUGLAG, n_theta)
     opt.set_ftol_abs(scan_tol)
     opt.set_max_objective(lambda x, g: scan_func(x))
-
+    """
     lb = [theta_bounds[i][0] for i in range(n_theta)]  # minimum.(theta_bounds)
     ub = [theta_bounds[i][1] for i in range(n_theta)]  # maximum.(theta_bounds)
     opt.set_lower_bounds(lb)
     opt.set_upper_bounds(ub)
+    """
     opt.set_local_optimizer(local_opt)
     opt.set_maxeval(max_iter)
 
     # inequality constraints
     opt.add_inequality_constraint(constraints_func, loss_tol)
+    for i in range(n_theta):
+        opt.add_inequality_constraint(lambda x, g: x[i] - theta_bounds[i][1], 0)
+    for i in range(n_theta):
+        opt.add_inequality_constraint(lambda x, g: theta_bounds[i][0] - x[i], 0)
     # start optimization
     try:
         optx = opt.optimize(theta_init)
@@ -114,18 +125,20 @@ def get_right_endpoint_cico_with_scan_func(
     except nlopt.ForcedStop:
         ret = -5
 
-    if ret == -5:
+    if ret == -5 and not out_of_bound:
+        pp = []
+        res = [None, pp, "LOSS_ERROR_STOP"]
+    elif ret == 5:
+        pp = []
+        res = [None, pp, "MAX_ITER_STOP"]
+    elif ret == -5 and out_of_bound:
         pp = []
         res = [None, pp, "SCAN_BOUND_REACHED"]
     elif ret == 3:
         loss = loss_func(optx)
         pp = [ProfilePoint(optf, loss, optx, ret, None)]
         res = [optf, pp, "BORDER_FOUND_BY_SCAN_TOL"]
-    elif ret == 5:
-        pp = []
-        res = [None, pp, "MAX_ITER_REACHED"]
     else:
-        pp = []
-        res = [None, pp, "UNKNOWN_STOP"]
+        raise ValueError("No interpretation of the optimization results.")
 
     return res

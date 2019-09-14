@@ -26,7 +26,7 @@ build: none
 branches:
   only:
     - master
-    #- dev
+    - dev
     #- /release-.*/
 
 #notifications:

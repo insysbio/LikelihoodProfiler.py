@@ -13,6 +13,7 @@ environment:
     - PYTHON: "C:\\Python36"
       PYTHON_VERSION: "3.4.1"
       PYTHON_ARCH: "64"
+      ARCH: "x64"
       NLOPT_WHEEL: https://download.lfd.uci.edu/pythonlibs/g5apjq5m/NLopt-2.6.1-cp36-cp36m-win_amd64.whl
 
     - PYTHON: "C:\\Python37"

@@ -11,7 +11,7 @@ install:
 script:
   - pytest
 
-after_success:
+before_deploy:
 - sphinx-build  -d .doctrees -b html ./docs ./site
 deploy:
   provider: pages

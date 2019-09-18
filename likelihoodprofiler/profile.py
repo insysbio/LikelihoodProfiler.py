@@ -86,18 +86,22 @@ def profile(
                 theta_full = np.concatenate((theta_rest[0:theta_num], [x], theta_rest[theta_num:len(theta_rest)]), axis=0)
                 try:
                     loss = loss_func(theta_full)
-                except ValueError:
-                    warnings.warn("Error when call loss_func{}".format(theta_full), DeprecationWarning, stacklevel=2)
-                    raise ValueError
+                except:
+                    warnings.warn("Error when call loss_func{}".format(theta_full), UserWarning, stacklevel=2)
+                    raise nlopt.ForcedStop("loss function error.")
                 counter += 1
                 return loss
             # set optimizer
             opt.set_min_objective(loss_func_rest)
             opt.set_maxeval(maxeval)
             # start optimization
-            theta_opt = opt.optimize(theta_init_rest)
-            loss = opt.last_optimum_value()
-            ret = opt.last_optimize_result()
+            try:
+                theta_opt = opt.optimize(theta_init_rest)
+                loss = opt.last_optimum_value()
+                ret = opt.last_optimize_result()
+            except nlopt.ForcedStop: # to heve normal return instead of Error
+                return ProfilePoint(x, 1e200, theta_init_i, -5, counter)
+
             theta_opt = np.concatenate((theta_opt[0:theta_num], [x], theta_opt[theta_num:]), axis=0)
             return ProfilePoint(
                 x,

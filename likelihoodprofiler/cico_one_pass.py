@@ -88,9 +88,9 @@ def get_right_endpoint_cico_with_scan_func(
         nonlocal out_of_bound
         try:
             loss = loss_func(x)
-        except ValueError:
-            warnings.warn("Error when call loss_func{}".format(x), DeprecationWarning, stacklevel=2)
-            raise ValueError
+        except:
+            warnings.warn("Error when call loss_func{}".format(x), UserWarning, stacklevel=2)
+            raise nlopt.ForcedStop("loss function error.")
 
         if (loss < 0) and (scan_func(x) > scan_bound):
             out_of_bound = True
@@ -139,6 +139,6 @@ def get_right_endpoint_cico_with_scan_func(
         pp = [ProfilePoint(optf, loss, optx, ret, None)]
         res = [optf, pp, "BORDER_FOUND_BY_SCAN_TOL"]
     else:
-        raise ValueError("No interpretation of the optimization results.")
+        raise RuntimeError("No interpretation of the optimization results.")
 
     return res

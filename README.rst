@@ -22,6 +22,11 @@
    :target: https://doi.org/10.13140/RG.2.2.18935.06563
    :alt: DOI:10.13140/RG.2.2.18935.06563
 
+Intro
+*****
+
+**LikelihoodProfiler** is a package for identifiability analysis and confidence intervals evaluation which was originally writen in **Julia** language. See https://github.com/insysbio/LikelihoodProfiler.jl This is translation the package to **Python**.
+
 Installation
 ************
 
@@ -34,7 +39,7 @@ For install python package, that you need, run next command::
   pip install -r requirements.txt
 
 Quick start
-*****
+***********
 
 For plot simple get interval::
 

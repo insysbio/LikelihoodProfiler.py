@@ -30,18 +30,25 @@ Intro
 Installation
 ************
 
-If your OS is Windows, you have to install special wheel. Go to
+If your OS is Windows, you have to install NLopt wheel. Go to
   https://www.lfd.uci.edu/~gohlke/pythonlibs/#nlopt
-and download the wheel that suits you.
 
-For install python package, that you need, run next command::
+Download the wheel which suits you and install it with:
+
+  pip install NLopt-***.whl
+
+Then clone LikelihoodProfiler from
+
+  https://github.com/insysbio/LikelihoodProfiler.py.git
+
+Install LikelihoodProfiler requirements with:
 
   pip install -r requirements.txt
 
 Quick start
 ***********
 
-For plot simple get interval::
+Plot simple profile::
 
   from likelihoodprofiler import get_interval
   f_3p_1im_dep = lambda x: 5.0 + (x[0]-3.0)**2 + (x[0]-x[1]-1.0)**2 + 0*x[2]**2

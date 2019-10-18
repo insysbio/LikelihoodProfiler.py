@@ -38,7 +38,6 @@ Download the wheel which suits you and install it with:
   pip install NLopt-***.whl
 
 Then clone LikelihoodProfiler from
-
   https://github.com/insysbio/LikelihoodProfiler.py.git
 
 Install LikelihoodProfiler requirements with:

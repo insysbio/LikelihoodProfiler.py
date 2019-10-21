@@ -108,6 +108,8 @@ def get_endpoint(
 
     # set counter in the scope
     counter = 0
+    # set supreme, maximal or minimal value of scanned parameter inside critical
+    supreme_gd = None
 
     # transforming
     n_scale = len(scale)
@@ -121,17 +123,24 @@ def get_endpoint(
     def loss_func_gd(theta_gd):
         nonlocal counter
         nonlocal scale
+        nonlocal supreme_gd
         theta_g = np.copy(theta_gd)
         if isLeft:
             theta_g[theta_num] *= -1  # change direction
 
         theta = map(lambda i: unscaling(theta_g[i], scale[i]), range(n_scale))
         theta = list(theta)
+        # calculate function
+        loss_norm = loss_func(theta) - loss_crit
 
         # update counter
         counter += 1
-        # calculate function
-        return loss_func(theta) - loss_crit
+
+        update_supreme = (loss_norm < 0) and (supreme_gd is None or (theta_gd[theta_num] > supreme_gd))
+        if update_supreme:
+            supreme_gd = theta_gd[theta_num]
+
+        return loss_norm
 
     theta_bounds_gd = map(
         lambda i: [scaling(theta_bounds[i][0], scale[i]),
@@ -178,4 +187,8 @@ def get_endpoint(
         )
     pps = [temp_fun(pp_gd[i]) for i in range(len(pp_gd))]
 
-    return EndPoint(optf, pps, status, direction, counter)
+    if (isLeft and supreme_gd is not None):
+         supreme_gd *= -1 # change direction
+    supreme = unscaling(supreme_gd, scale[theta_num])
+
+    return EndPoint(optf, pps, status, direction, counter, supreme)

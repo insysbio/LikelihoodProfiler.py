@@ -26,9 +26,9 @@ def test_f_2p_1im_max_iter_5():
         max_iter=5
     ) for i in range(2)]
     assert res0[0][0] == None
-    assert res0[0][2] == "MAX_ITER_REACHED"
+    assert res0[0][2] == "MAX_ITER_STOP"
     assert res0[1][0] == None
-    assert res0[1][2] == "MAX_ITER_REACHED"
+    assert res0[1][2] == "MAX_ITER_STOP"
 
 
 def test_f_2p():

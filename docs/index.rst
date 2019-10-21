@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to likelihoodprofiler's documentation!
+Welcome to likelihoodprofiler documentation!
 ==============================================
 
 .. toctree::
@@ -22,11 +22,11 @@ Indices and tables
 
 Installation
 =============
-Description for installation
+Installation guide
 
 Quick start
 =============
-For plot simple get interval::
+Plot simple profile::
 
   from likelihoodprofiler import get_interval
   f_3p_1im_dep = lambda x: 5.0 + (x[0]-3.0)**2 + (x[0]-x[1]-1.0)**2 + 0*x[2]**2

@@ -26,7 +26,7 @@ def get_right_endpoint_by_lin_extrapol(
     ):
     if len(theta_bounds) == 0:
         theta_bounds = np.tile([(-1)*np.inf, np.inf], (len(theta_init), 1))
-        
+
     # dim of the theta vector
     n_theta = len(theta_init)
 
@@ -75,16 +75,17 @@ def get_right_endpoint_by_lin_extrapol(
             )
         pps.append(point_2)
         accum_counter += point_2.counter # update counter
-        if x_2 >= scan_bound and point_2.loss < 0:
-            return [None, pps, "SCAN_BOUND_REACHED"] # break
-        # no checking for the first and second iterations
-        # elseif iteration_count>2 && isapprox(x_3, x_2, atol = scan_tol)
-        elif (iteration_count>1) and (point_2.loss != point_1.loss) and math.isclose((x_2 - x_1) * point_2.loss / (point_2.loss - point_1.loss), 0, abs_tol = scan_tol):
-            return [x_2, pps, "BORDER_FOUND_BY_SCAN_TOL"] # break
-        elif math.isclose(point_2.loss, 0., abs_tol = loss_tol):
-            return [x_2, pps, "BORDER_FOUND_BY_LOSS_TOL"] # break
-        elif point_2.ret == 5:
-            return [None, pps, "MAX_ITER_REACHED"] # break
+        if point_2.ret == 5:
+            return [None, pps, "MAX_ITER_STOP"]
+        elif point_2.ret == -5:
+            return [None, pps, "LOSS_ERROR_STOP"]
+        elif x_2 >= scan_bound and point_2.loss < 0.: # successfull result
+            return [None, pps, "SCAN_BOUND_REACHED"]
+        # no checking for the first iteration
+        elif iteration_count>1 and (point_2.loss != point_1.loss) and math.isclose((x_2 - x_1) * point_2.loss / (point_2.loss - point_1.loss), 0, abs_tol = scan_tol): # successfull result
+            return [x_2, pps, "BORDER_FOUND_BY_SCAN_TOL"]
+        elif math.isclose(point_2.loss, 0., abs_tol = loss_tol): # successfull result
+            return [x_2, pps, "BORDER_FOUND_BY_LOSS_TOL"]
 
         # next step
         if iteration_count == 1:

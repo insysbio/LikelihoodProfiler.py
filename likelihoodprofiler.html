@@ -354,17 +354,20 @@ starts optimization.</p>
 <span id="likelihoodprofiler-structures-module"></span><h2>likelihoodprofiler.structures module<a class="headerlink" href="#module-likelihoodprofiler.structures" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="likelihoodprofiler.structures.EndPoint">
-<em class="property">class </em><code class="sig-prename descclassname">likelihoodprofiler.structures.</code><code class="sig-name descname">EndPoint</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">profilePoints</em>, <em class="sig-param">status</em>, <em class="sig-param">direction</em>, <em class="sig-param">counter</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.structures.EndPoint" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">likelihoodprofiler.structures.</code><code class="sig-name descname">EndPoint</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">profilePoints</em>, <em class="sig-param">status</em>, <em class="sig-param">direction</em>, <em class="sig-param">counter</em>, <em class="sig-param">supreme</em><span class="sig-paren">)</span><a class="headerlink" href="#likelihoodprofiler.structures.EndPoint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Structure storing end point for confidence interval.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>value</strong> (<em>Float64</em><em> or </em><em>None</em>) – </p></li>
-<li><p><strong>profilePoints</strong> (<em>Array</em><em>[</em><a class="reference internal" href="#likelihoodprofiler.structures.ProfilePoint" title="likelihoodprofiler.structures.ProfilePoint"><em>ProfilePoint</em></a><em>]</em>) – </p></li>
-<li><p><strong>status</strong> (<em>String</em>) – </p></li>
-<li><p><strong>direction</strong> (<em>String</em>) – </p></li>
-<li><p><strong>counter</strong> (<em>Int</em>) – </p></li>
+<li><p><strong>value</strong> (<em>Float64</em><em> or </em><em>None             # value of endpoint</em><em> or </em><em>nothing</em>) – </p></li>
+<li><p><strong>profilePoints</strong> (<em>Array</em><em>[</em><a class="reference internal" href="#likelihoodprofiler.structures.ProfilePoint" title="likelihoodprofiler.structures.ProfilePoint"><em>ProfilePoint</em></a><em>] </em><em># vector of profile points</em>) – </p></li>
+<li><p><strong>status</strong> (<em>String                     # result of analysis</em>) – </p></li>
+<li><p><strong>direction</strong> (<em>String                  # &quot;right&quot;</em><em> or </em><em>&quot;left&quot;</em>) – </p></li>
+<li><p><strong>counter</strong> (<em>Int                       # number of loss_func</em><em>(</em><em>) </em><em>calls to calculate the endpoint</em>) – </p></li>
+<li><p><strong>supreme</strong> (<em>Float64</em><em> or </em><em>None           # maximal value inside profile interval</em>) – </p></li>
+<li><p><strong>values - &quot;BORDER_FOUND_BY_SCAN_TOL&quot;</strong><strong>, </strong><strong>&quot;BORDER_FOUND_LOSS_TOL&quot;</strong><strong>,</strong> (<em>status</em>) – </p></li>
+<li><p><strong>&quot;MAX_ITER_STOP&quot;</strong><strong>, </strong><strong>&quot;LOSS_ERROR_STOP&quot;</strong> (<em>&quot;SCAN_BOUND_REACHED&quot;</em><em>,</em>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -378,11 +381,12 @@ starts optimization.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>value</strong> (<em>Float64</em>) – </p></li>
-<li><p><strong>loss</strong> (<em>Float64</em>) – </p></li>
-<li><p><strong>params</strong> (<em>Array</em><em>[</em><em>Float64</em><em>]</em>) – </p></li>
-<li><p><strong>ret</strong> (<em>String</em>) – </p></li>
-<li><p><strong>counter</strong> (<em>Int or</em>) – </p></li>
+<li><p><strong>value</strong> (<em>Float64           # x value of profile point</em>) – </p></li>
+<li><p><strong>loss</strong> (<em>Float64            # y value of profile point</em><em> (</em><em>loss function at value</em><em>)</em>) – </p></li>
+<li><p><strong>params</strong> (<em>Array</em><em>[</em><em>Float64</em><em>]   </em><em># vector of optimal values of loss_func arguments</em>) – </p></li>
+<li><p><strong>ret</strong> (<em>String              # return value from NLOpt.optimize</em><em>(</em><em>)</em>) – </p></li>
+<li><p><strong>counter</strong> (<em>Int             # number of loss_func</em><em>(</em><em>) </em><em>calls to calculate the value</em>) – </p></li>
+<li><p><strong>values - -5</strong><strong>, </strong><strong>5</strong><strong>, </strong><strong>3</strong> (<em>ret</em>) – </p></li>
 </ul>
 </dd>
 </dl>

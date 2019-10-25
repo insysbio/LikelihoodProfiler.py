@@ -17,10 +17,10 @@
    :alt: Appveyor build status
 
 .. image::
-   https://zenodo.org/badge/DOI/10.13140/RG.2.2.18935.06563.svg
+   https://zenodo.org/badge/DOI/10.13140/RG.2.2.10306.94409.svg
    :height: 20
-   :target: https://doi.org/10.13140/RG.2.2.18935.06563
-   :alt: DOI:10.13140/RG.2.2.18935.06563
+   :target: https://doi.org/10.13140/RG.2.2.10306.94409
+   :alt: DOI:10.13140/RG.2.2.10306.94409
 
 Intro
 *****

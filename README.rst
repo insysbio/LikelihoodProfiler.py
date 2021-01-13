@@ -27,11 +27,6 @@ Intro
 
 **LikelihoodProfiler** is a package for identifiability analysis and confidence intervals evaluation which was originally written in **Julia** language. See https://github.com/insysbio/LikelihoodProfiler.jl This is the translation of the original **Julia** code to **Python**.
 
-Intro
-*****
-
-**LikelihoodProfiler** is a package for identifiability analysis and confidence intervals evaluation which was originally written in **Julia** language. See https://github.com/insysbio/LikelihoodProfiler.jl This is the translation of the original **Julia** code to **Python**.
-
 Installation
 ************
 

@@ -11,12 +11,6 @@
    :alt: Github actions build status
 
 .. image::
-   https://ci.appveyor.com/api/projects/status/github/insysbio/LikelihoodProfiler.py?branch=master&svg=true
-   :height: 20
-   :target: https://ci.appveyor.com/project/metelkin/likelihoodprofiler-py
-   :alt: Appveyor build status
-
-.. image::
    https://zenodo.org/badge/DOI/10.13140/RG.2.2.10306.94409.svg
    :height: 20
    :target: https://doi.org/10.13140/RG.2.2.10306.94409

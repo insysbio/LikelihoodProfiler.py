@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         python-version: [3.7]
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest]
 
     steps:
     - uses: actions/checkout@v2
@@ -31,10 +31,7 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-  deploy:
-    needs: [build] # The second job must depend on the first one to complete before running, and uses ubuntu-latest instead of windows.
-    runs-on: ubuntu-latest
-    steps:
+
     - run: sphinx-build  -d .doctrees -b html ./docs ./site
 
     - name: Deploy docs

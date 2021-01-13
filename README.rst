@@ -5,9 +5,9 @@
    :alt: Documentation
 
 .. image::
-   https://github.com/insysbio/LikelihoodProfiler.jl/workflows/CI/badge.svg)](https://github.com/insysbio/LikelihoodProfiler.jl/actions)
+   https://github.com/insysbio/LikelihoodProfiler.py/workflows/CI/badge.svg
    :height: 20
-   :target: https://github.com/insysbio/LikelihoodProfiler.jl/actions
+   :target: https://github.com/insysbio/LikelihoodProfiler.py/actions
    :alt: Github actions build status
 
 .. image::

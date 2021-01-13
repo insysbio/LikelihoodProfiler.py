@@ -5,10 +5,10 @@
    :alt: Documentation
 
 .. image::
-   https://travis-ci.org/insysbio/LikelihoodProfiler.py.svg?branch=master
+   https://github.com/insysbio/LikelihoodProfiler.jl/workflows/CI/badge.svg)](https://github.com/insysbio/LikelihoodProfiler.jl/actions)
    :height: 20
-   :target: https://travis-ci.org/insysbio/LikelihoodProfiler.py
-   :alt: Travis build status
+   :target: https://github.com/insysbio/LikelihoodProfiler.jl/actions
+   :alt: Github actions build status
 
 .. image::
    https://ci.appveyor.com/api/projects/status/github/insysbio/LikelihoodProfiler.py?branch=master&svg=true

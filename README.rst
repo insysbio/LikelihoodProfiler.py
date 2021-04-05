@@ -21,12 +21,13 @@ Notes
 
 This repository is the one-to-one translation of Julia's package https://github.com/insysbio/LikelihoodProfiler.jl of version 0.3.0.
 
-Currently the Python's version is not maintained. Use [Issues](https://github.com/insysbio/LikelihoodProfiler.py/issues) if any help wanted.
+Currently the Python's version is not maintained. Use https://github.com/insysbio/LikelihoodProfiler.py/issues if any help wanted.
 
 Intro
 *****
 
-**LikelihoodProfiler** is a package for identifiability analysis and confidence intervals evaluation which was originally written in **Julia** language. See https://github.com/insysbio/LikelihoodProfiler.jl This is the translation of the original **Julia** code to **Python**.
+**LikelihoodProfiler** is a package for identifiability analysis and confidence intervals evaluation which was originally
+ written in **Julia** language. See https://github.com/insysbio/LikelihoodProfiler.jl
 
 Installation
 ************

@@ -11,10 +11,17 @@
    :alt: Github actions build status
 
 .. image::
-   https://zenodo.org/badge/DOI/10.13140/RG.2.2.10306.94409.svg
+   https://zenodo.org/badge/DOI/10.1371/journal.pcbi.1008495.svg
    :height: 20
-   :target: https://doi.org/10.13140/RG.2.2.10306.94409
-   :alt: DOI:10.13140/RG.2.2.10306.94409
+   :target: https://doi.org/10.1371/journal.pcbi.1008495
+   :alt: DOI:10.1371/journal.pcbi.1008495
+
+Notes
+*****
+
+This repository is the one-to-one translation of Julia's package https://github.com/insysbio/LikelihoodProfiler.jl of version 0.3.0.
+
+Currently the Python's version is not maintained. Use [Issues](https://github.com/insysbio/LikelihoodProfiler.py/issues) if any help wanted.
 
 Intro
 *****

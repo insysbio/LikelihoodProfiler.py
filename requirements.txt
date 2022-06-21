@@ -48,7 +48,7 @@ nbformat==4.4.0
 nlopt
 notebook>=5.7.8
 numba==0.44.1
-numpy==1.16.4
+numpy==1.22.0
 packaging==19.1
 pandas==0.24.2
 pandocfilters==1.4.2
